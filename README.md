@@ -121,24 +121,14 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
         * Luas apartemen bervariasi dengan puncak sekitar 500-800 kaki persegi.
         * Distribusi luas juga menunjukkan pola normal dengan skew ke kanan.
 
-#### Korelasi Heatmap
-- **Luas Bangunan (square_feet)** memiliki hubungan kuat dengan **bathrooms** dan **bedrooms**.
-- **Harga Sewa (price)** memiliki korelasi yang rendah dengan **bathrooms** dan **bedrooms**, menandakan faktor lain seperti lokasi atau fasilitas yang lebih mempengaruhi harga.
-
-#### Histogram
-- **Bathrooms**: Mayoritas memiliki 1 kamar mandi.
-- **Bedrooms**: Mayoritas memiliki 1 atau 2 kamar tidur.
-- **Price**: Harga sewa apartemen tersebar dengan puncak sekitar 700-1000 USD, dengan sedikit skew ke kanan.
-- **Square_feet**: Luas apartemen bervariasi, dengan puncak sekitar 500-800 kaki persegi.
-
 ## Data Preparation
 
-### Teknik Data Preparation
-- **Handling Missing Values**: Mengimputasi atau menghapus nilai yang hilang pada dataset.
-- **Removing Outliers**: Menghapus data yang memiliki nilai outliers.
-- **Encoding Categorical Variables**: Mengubah variabel kategorikal menjadi numerik menggunakan teknik one-hot encoding.
-- **Pembagian Dataset**: Pembagian data train-test dengan rasio 80:20.
-- **Feature Scaling**: Melakukan standarisasi pada fitur numerik.
+### Teknik Persiapan Data
+    - **Menangani Nilai yang Hilang**: Mengimputasi atau menghapus nilai yang hilang dalam dataset.
+    - **Menghapus Outlier**: Menghapus data yang memiliki nilai outlier.
+    - **Pengkodean Variabel Kategorikal**: Mengonversi variabel kategorikal menjadi numerik dengan menggunakan teknik one-hot encoding.
+    - **Pembagian Dataset**: Membagi data menjadi data latih dan data uji dengan rasio 80:20.
+    - **Skalasi Fitur**: Melakukan standarisasi pada fitur numerik.
 
 ### Proses Data Preparation
 1. Fitur dengan missing value < 100 akan di-drop.
