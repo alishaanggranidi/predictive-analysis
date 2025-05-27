@@ -31,7 +31,8 @@ Pasar properti, sebagai sektor yang penting dan dinamis, berperan besar dalam pe
 ## Data Understanding
 
 ### Dataset
-Dataset yang digunakan diperoleh dari Kaggle dan berisi informasi mengenai apartemen yang disewakan, termasuk fitur-fitur seperti jumlah kamar mandi, kamar tidur, luas apartemen, dan harga sewa. Dataset ini memiliki 100.000 baris dan 22 kolom, namun hanya 25.000 baris yang digunakan dalam analisis.
+Dataset yang digunakan diperoleh dari [Kaggle](https://www.kaggle.com/datasets/shashanks1202/apartment-rent-data) dan berisi informasi mengenai apartemen yang disewakan, termasuk fitur-fitur seperti jumlah kamar mandi, kamar tidur, luas apartemen, dan harga sewa. Dataset ini memiliki 100.000 baris dan 22 kolom, namun hanya 25.000 baris yang digunakan dalam analisis.
+
 
 | Column         | Dtype    |
 |----------------|----------|
