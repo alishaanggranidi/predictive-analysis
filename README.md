@@ -124,11 +124,11 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
 ## Data Preparation
 
 ### Teknik Persiapan Data
-    - **Menangani Nilai yang Hilang**: Mengimputasi atau menghapus nilai yang hilang dalam dataset.
-    - **Menghapus Outlier**: Menghapus data yang memiliki nilai outlier.
-    - **Pengkodean Variabel Kategorikal**: Mengonversi variabel kategorikal menjadi numerik dengan menggunakan teknik one-hot encoding.
-    - **Pembagian Dataset**: Membagi data menjadi data latih dan data uji dengan rasio 80:20.
-    - **Skalasi Fitur**: Melakukan standarisasi pada fitur numerik.
+- **Menangani Nilai yang Hilang**: Mengimputasi atau menghapus nilai yang hilang dalam dataset.
+- **Menghapus Outlier**: Menghapus data yang memiliki nilai outlier.
+- **Pengkodean Variabel Kategorikal**: Mengonversi variabel kategorikal menjadi numerik dengan menggunakan teknik one-hot encoding.
+- **Pembagian Dataset**: Membagi data menjadi data latih dan data uji dengan rasio 80:20.
+- **Skalasi Fitur**: Melakukan standarisasi pada fitur numerik.
 
 ### Proses Data Preparation
 1. Fitur dengan missing value < 100 akan di-drop.
