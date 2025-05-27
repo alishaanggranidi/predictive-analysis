@@ -233,52 +233,51 @@ Pada tahap modeling, tiga algoritma yang berbeda digunakan untuk memprediksi har
 Berdasarkan evaluasi nilai MSE pada data uji, model terbaik dipilih sebagai solusi. Sebagai contoh, jika model Random Forest menunjukkan MSE terendah pada data uji dibandingkan dengan KNN dan AdaBoost, maka model Random Forest akan dipilih sebagai model terbaik.
 
 
-## Evaluation
+## Evaluasi
+
 ### Metrik Evaluasi
-- **Mean Squared Error (MSE)**: Mengukur rata-rata kuadrat dari kesalahan prediksi. MSE yang lebih rendah menunjukkan performa model yang lebih baik.
+- **Mean Squared Error (MSE)**: Metrik ini mengukur rata-rata kuadrat selisih antara nilai yang diprediksi dan nilai aktual. MSE yang lebih rendah menunjukkan performa model yang lebih baik.
 
 ### Penjelasan Metrik
-Mean Squared Error (MSE) adalah metrik yang umum digunakan untuk mengevaluasi akurasi model regresi. MSE didefinisikan dengan rumus sebagai berikut:
+Mean Squared Error (MSE) adalah metrik yang umum digunakan untuk menilai akurasi model regresi. Metrik ini didefinisikan sebagai berikut:
 
 $$
 \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
-di mana:
+Dimana:
 - $y_i$ adalah nilai aktual,
-- $\hat y_i$ adalah nilai prediksi,
+- $\hat{y}_i$ adalah nilai prediksi,
 - $n$ adalah jumlah sampel.
 
-MSE memberikan penalti yang lebih besar untuk kesalahan yang lebih besar karena penggunaan kuadrat kesalahan. Nilai MSE yang lebih rendah menunjukkan performa model yang lebih baik.
+MSE memberikan penalti yang lebih besar untuk kesalahan yang lebih besar karena penggunaan kuadrat kesalahan. Semakin rendah nilai MSE, semakin baik performa model.
 
 ## Hasil
 
-|              | train      | test       |
-|--------------|------------|------------|
-| **KNN**      | 64.430654  | 82.02668   |
-| **RF**       | 56.269007  | 80.098912  |
-| **Boosting** | 171.35363  | 172.069614 |
+|              | MSE Train   | MSE Test    |
+|--------------|-------------|-------------|
+| **KNN**      | 64.43       | 82.03       |
+| **RF**       | 56.27       | 80.10       |
+| **Boosting** | 171.35      | 172.07      |
 
-- **KNN**: Setelah melakukan hyperparameter tuning, model KNN menghasilkan nilai MSE 64.430654
-- **Random Forest**: Model Random Forest menunjukkan performa yang lebih baik dibandingkan KNN dengan MSE yang lebih rendah yaitu 56.269007
-- **AdaBoost**: Model AdaBoost juga menunjukkan performa yang kompetitif dengan nilai MSE 171.35363 
+- **KNN**: Setelah melakukan tuning hyperparameter, model KNN menghasilkan MSE sebesar 64.43.
+- **Random Forest**: Model Random Forest menunjukkan performa yang lebih baik dibandingkan KNN dengan MSE yang lebih rendah yaitu 56.27.
+- **AdaBoost**: Model AdaBoost juga menunjukkan performa yang kompetitif dengan MSE sebesar 171.35.
 
-![Barchart metrik](./images/outputcode4.png)
+![Bar Chart of Metrics](./images/outputcode4.png)
 
 ### Model Terbaik
 
-Berdasarkan hasil evaluasi, model Random Forest dipilih sebagai model terbaik karena memiliki MSE terendah pada data uji. Berikut adalah grafik untuk nilai aktual vs nilai prediksi menggunakan model Random Forest.
+Berdasarkan hasil evaluasi, model **Random Forest** dipilih sebagai model terbaik karena memiliki MSE terendah pada data uji. Berikut adalah visualisasi perbandingan nilai aktual vs nilai prediksi menggunakan model Random Forest.
 
-![visualisasi ranfos](./images/outputcode5.png)
+![Visualisasi Random Forest](./images/outputcode5.png)
 
-**Evaluasi Terhadap Business Understanding**
-- Menjawab Problem Statement: Model yang dibuat berhasil menjawab problem statement dengan memprediksi harga sewa apartemen berdasarkan fitur-fitur yang ada dan mengidentifikasi fitur-fitur yang paling berpengaruh.
-- Mencapai Goals: Model Random Forest dengan hyperparameter yang dioptimalkan berhasil mencapai tujuan untuk memberikan prediksi harga sewa yang akurat dan mengidentifikasi fitur penting.
-- Dampak dari Solution Statement: Penggunaan beberapa algoritma dan hyperparameter tuning memberikan dampak positif dengan meningkatkan akurasi prediksi dan memungkinkan pemilihan model terbaik. Solusi yang direncanakan memberikan hasil yang signifikan dalam mencapai tujuan proyek.
-
+### Evaluasi Terhadap Business Understanding
+- **Menjawab Problem Statement**: Model yang dikembangkan berhasil menjawab problem statement dengan memprediksi harga sewa apartemen berdasarkan fitur-fitur yang ada dan mengidentifikasi fitur-fitur yang paling berpengaruh.
+- **Mencapai Tujuan**: Model Random Forest dengan optimasi hyperparameter berhasil mencapai tujuan untuk memberikan prediksi harga sewa yang akurat dan mengidentifikasi fitur penting.
+- **Dampak dari Solution Statement**: Penggunaan beberapa algoritma dan tuning hyperparameter memberikan dampak positif dengan meningkatkan akurasi prediksi dan memungkinkan pemilihan model terbaik. Solusi yang diterapkan memberikan hasil yang signifikan dalam mencapai tujuan proyek.
 
 ## Kesimpulan
 - Model Random Forest terbukti menjadi model terbaik dengan MSE terendah.
-- Hyperparameter tuning memainkan peran penting dalam meningkatkan performa model.
-- Solusi yang diimplementasikan berhasil memenuhi problem statement dan goals yang ditetapkan.
-
+- Tuning hyperparameter memainkan peran penting dalam meningkatkan performa model.
+- Solusi yang diimplementasikan berhasil memenuhi problem statement dan tujuan yang telah ditetapkan.
