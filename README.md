@@ -4,9 +4,9 @@
 ### Latar Belakang
 Pasar properti, sebagai sektor yang penting dan dinamis, berperan besar dalam perekonomian, dengan harga menjadi faktor kunci yang mempengaruhi berbagai pemangku kepentingan. Prediksi harga properti sebelumnya didasarkan pada model statistik dan matematis tradisional, seperti regresi dan penilaian harga hedonis, yang menjadi dasar untuk memahami faktor-faktor yang mempengaruhi penilaian properti. Namun, seiring dengan kemajuan daya komputasi dan munculnya teknik machine learning (ML), model-model tradisional ini kini dilengkapi dengan metode yang lebih canggih. Machine learning, terutama teknik seperti neural networks, deep learning, dan gradient boosting, telah terbukti meningkatkan akurasi prediksi, terutama dengan ketersediaan dataset yang lebih besar. Selain itu, penggunaan data time-series yang memperhitungkan fluktuasi harga dari waktu ke waktu menandai kemajuan signifikan dalam prediksi harga properti. Oleh karena itu, pengembangan sistem prediksi harga sewa apartemen menggunakan machine learning menjadi sangat penting untuk membantu pemilik properti dan penyewa membuat keputusan yang lebih baik dan lebih efisien.
 
-### Mengapa Masalah Ini Harus Diselesaikan?
-- Penetapan harga sewa yang akurat sangat penting untuk mencegah kerugian bagi kedua belah pihak, baik pemilik properti maupun penyewa.
-- Memiliki sistem prediksi harga yang tepat dapat meningkatkan efektivitas pasar penyewaan properti dengan mempermudah proses penentuan harga yang sesuai.
+### Mengapa Masalah Ini Harus Diselesaikan? 🤔
+- Penetapan harga sewa yang tepat sangat penting untuk menghindari kerugian bagi pemilik dan penyewa.
+- Sistem prediksi harga yang akurat dapat meningkatkan efisiensi pasar penyewaan properti dengan mempermudah proses penetapan harga yang sesuai.
 
 ### Referensi Terkait 📚
 - [MACHINE LEARNING FOR PROPERTY PRICE PREDICTION AND PRICE VALUATION: A SYSTEMATIC LITERATURE REVIEW](https://www.researchgate.net/publication/355373964_MACHINE_LEARNING_FOR_PROPERTY_PRICE_PREDICTION_AND_PRICE_VALUATION_A_SYSTEMATIC_LITERATURE_REVIEW)
@@ -19,14 +19,14 @@ Pasar properti, sebagai sektor yang penting dan dinamis, berperan besar dalam pe
 - Fitur-fitur apa saja yang paling berpengaruh dalam menentukan harga sewa apartemen?
 - Bagaimana cara meningkatkan akurasi prediksi harga sewa dengan menggunakan teknik machine learning yang canggih seperti K-Nearest Neighbors, Random Forest, atau Boosting?
 
-### Goals
-- Mengembangkan model machine learning yang mampu memprediksi harga sewa apartemen dengan tingkat akurasi yang tinggi, berdasarkan fitur-fitur yang relevan.
-- Menentukan fitur-fitur yang memiliki pengaruh terbesar dalam penentuan harga sewa.
-- Meningkatkan akurasi model prediksi dengan melakukan penyesuaian hyperparameter dan menggunakan teknik machine learning yang sesuai.
+### Tujuan 
+- Mengembangkan model machine learning yang mampu memprediksi harga sewa apartemen dengan akurasi tinggi berdasarkan fitur-fitur yang relevan.
+- Menentukan fitur-fitur yang paling berpengaruh dalam penentuan harga sewa.
+- Meningkatkan akurasi prediksi dengan melakukan tuning hyperparameter dan menggunakan teknik machine learning yang sesuai.
 
-### Solution Statements
-- Menerapkan berbagai algoritma machine learning seperti KNN, Random Forest, dan AdaBoost untuk memprediksi harga sewa.
-- Membandingkan kinerja model dan memilih model terbaik berdasarkan metrik evaluasi seperti Mean Squared Error (MSE).
+### Solusi 💡
+- Menerapkan berbagai algoritma machine learning seperti KNN, Random Forest, dan AdaBoost untuk memprediksi harga sewa apartemen.
+- Membandingkan kinerja model berdasarkan metrik evaluasi seperti Mean Squared Error (MSE) dan memilih model terbaik.
 
 ## Data Understanding
 
@@ -233,9 +233,9 @@ Pada tahap modeling, tiga algoritma yang berbeda digunakan untuk memprediksi har
 Berdasarkan evaluasi nilai MSE pada data uji, model terbaik dipilih sebagai solusi. Sebagai contoh, jika model Random Forest menunjukkan MSE terendah pada data uji dibandingkan dengan KNN dan AdaBoost, maka model Random Forest akan dipilih sebagai model terbaik.
 
 
-## Evaluasi
+## Evaluasi 
 
-### Metrik Evaluasi
+### Metrik Evaluasi 📈
 - **Mean Squared Error (MSE)**: Metrik ini mengukur rata-rata kuadrat selisih antara nilai yang diprediksi dan nilai aktual. MSE yang lebih rendah menunjukkan performa model yang lebih baik.
 
 ### Penjelasan Metrik
@@ -266,7 +266,7 @@ MSE memberikan penalti yang lebih besar untuk kesalahan yang lebih besar karena 
 
 ![Bar Chart of Metrics](./images/outputcode4.png)
 
-### Model Terbaik
+### Model Terbaik 🌟
 
 Berdasarkan hasil evaluasi, model **Random Forest** dipilih sebagai model terbaik karena memiliki MSE terendah pada data uji. Berikut adalah visualisasi perbandingan nilai aktual vs nilai prediksi menggunakan model Random Forest.
 
