@@ -76,8 +76,34 @@ Dataset yang digunakan diperoleh dari Kaggle dan berisi informasi mengenai apart
 Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `price` dan `square_feet`.
 ![boxplot](./images/outputcode.png)
 
+### Variabel yang ada pada dataset dijelaskan sebagai berikut:
+1. id : Identifikasi unik untuk listing apartemen
+2. category : Kategori dari iklan apartemen
+3. title : Nama apartemen
+4. body : Deskripsi atau informasi tambahan tentang apartemen
+5. amenities*: Fasilitas yang disediakan, seperti AC, lapangan basket, kabel TV, gym, akses internet, kolam renang, lemari es, dll.
+6. bathrooms : Jumlah kamar mandi yang tersedia
+7. bedrooms : Jumlah kamar tidur yang tersedia
+8. currency : Mata uang yang digunakan untuk harga apartemen
+9.  fee : Biaya tambahan yang mungkin dikenakan
+10. has_photo : Menunjukkan apakah apartemen memiliki foto
+11. pets_allowed : Jenis hewan peliharaan yang diizinkan, seperti anjing/kucing, dll.
+12. price : Harga sewa apartemen
+13. price_display : Harga yang ditampilkan untuk pembaca
+14. price_type : Harga yang tertera dalam USD
+15. square_feet : Ukuran atau luas apartemen dalam satuan kaki persegi
+16. address : Alamat lokasi apartemen
+17. cityname : Nama kota tempat apartemen berada
+18. state : Nama provinsi tempat apartemen berada
+19. latitude : Koordinat lintang lokasi apartemen
+20. longitude : Koordinat bujur lokasi apartemen
+21. source : Sumber iklan apartemen
+22. time : Waktu saat iklan dibuat
+
+
 ### Exploratory Data Analysis (EDA)
 - Membuat korelasi heatmap untuk melihat nilai korelasi antar fitur numerik.
+ ![Korelasi heatmap](./images/outputcode2.png)
 - Membuat histogram untuk melihat persebaran data numerik.
 
 #### Korelasi Heatmap
