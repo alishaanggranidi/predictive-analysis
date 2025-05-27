@@ -1,4 +1,4 @@
-# Laporan Proyek Prediksi Harga Sewa Apartemen
+# 📊 Laporan Proyek Prediksi Harga Sewa Apartemen
 
 ## Domain Proyek
 ### Latar Belakang
@@ -8,7 +8,7 @@ Pasar properti, sebagai sektor yang penting dan dinamis, berperan besar dalam pe
 - Penetapan harga sewa yang akurat sangat penting untuk mencegah kerugian bagi kedua belah pihak, baik pemilik properti maupun penyewa.
 - Memiliki sistem prediksi harga yang tepat dapat meningkatkan efektivitas pasar penyewaan properti dengan mempermudah proses penentuan harga yang sesuai.
 
-### Referensi Terkait
+### Referensi Terkait 📚
 - [MACHINE LEARNING FOR PROPERTY PRICE PREDICTION AND PRICE VALUATION: A SYSTEMATIC LITERATURE REVIEW](https://www.researchgate.net/publication/355373964_MACHINE_LEARNING_FOR_PROPERTY_PRICE_PREDICTION_AND_PRICE_VALUATION_A_SYSTEMATIC_LITERATURE_REVIEW)
 - [Machine Learning for Housing Price Prediction](https://www.researchgate.net/publication/367317216_Machine_Learning_for_Housing_Price_Prediction)
 
@@ -101,7 +101,7 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
 22. time : Waktu saat iklan dibuat
 
 
-### Exploratory Data Analysis (EDA)
+### Exploratory Data Analysis (EDA) 🔍
 - Membuat heatmap korelasi untuk menganalisis hubungan antar fitur numerik
  ![Korelasi heatmap](./images/outputcode2.png)
     * Hubungan antara Luas Bangunan dan Fitur Lain: Fitur square_feet (luas bangunan) menunjukkan hubungan yang cukup kuat dengan bathrooms dan bedrooms, yang menunjukkan bahwa luas bangunan dapat menjadi indikator penting dalam menentukan ukuran dan fasilitas apartemen.
@@ -121,7 +121,7 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
         * Luas apartemen bervariasi dengan puncak sekitar 500-800 kaki persegi.
         * Distribusi luas juga menunjukkan pola normal dengan skew ke kanan.
 
-## Data Preparation
+## Data Preparation ⚙️
 
 ### Teknik Data Preparation
 - **Menangani Nilai yang Hilang**: Mengimputasi atau menghapus nilai yang hilang dalam dataset.
@@ -228,7 +228,7 @@ Pada tahap modeling, tiga algoritma yang berbeda digunakan untuk memprediksi har
         - Rentan terhadap outliers karena memberi bobot lebih pada kesalahan.
         - Kinerja menurun jika data sangat bising (noisy).
 
-### Model Terbaik Sebagai Solusi
+### Model Terbaik Sebagai Solusi ✨
 
 Berdasarkan evaluasi nilai MSE pada data uji, model terbaik dipilih sebagai solusi. Sebagai contoh, jika model Random Forest menunjukkan MSE terendah pada data uji dibandingkan dengan KNN dan AdaBoost, maka model Random Forest akan dipilih sebagai model terbaik.
 
@@ -277,7 +277,7 @@ Berdasarkan hasil evaluasi, model **Random Forest** dipilih sebagai model terbai
 - **Mencapai Tujuan**: Model Random Forest dengan optimasi hyperparameter berhasil mencapai tujuan untuk memberikan prediksi harga sewa yang akurat dan mengidentifikasi fitur penting.
 - **Dampak dari Solution Statement**: Penggunaan beberapa algoritma dan tuning hyperparameter memberikan dampak positif dengan meningkatkan akurasi prediksi dan memungkinkan pemilihan model terbaik. Solusi yang diterapkan memberikan hasil yang signifikan dalam mencapai tujuan proyek.
 
-## Kesimpulan
+## Kesimpulan 👀
 - Model Random Forest terbukti menjadi model terbaik dengan MSE terendah.
 - Tuning hyperparameter memainkan peran penting dalam meningkatkan performa model.
 - Solusi yang diimplementasikan berhasil memenuhi problem statement dan tujuan yang telah ditetapkan.
