@@ -123,48 +123,115 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
 
 ## Data Preparation
 
-### Teknik Persiapan Data
+### Teknik Data Preparation
 - **Menangani Nilai yang Hilang**: Mengimputasi atau menghapus nilai yang hilang dalam dataset.
 - **Menghapus Outlier**: Menghapus data yang memiliki nilai outlier.
 - **Pengkodean Variabel Kategorikal**: Mengonversi variabel kategorikal menjadi numerik dengan menggunakan teknik one-hot encoding.
 - **Pembagian Dataset**: Membagi data menjadi data latih dan data uji dengan rasio 80:20.
 - **Skalasi Fitur**: Melakukan standarisasi pada fitur numerik.
 
-### Proses Data Preparation
-1. Fitur dengan missing value < 100 akan di-drop.
-2. Fitur dengan missing value > 1000 akan diimputasi.
-3. Outlier diatasi menggunakan metode IQR.
-4. Fitur seperti `id`, `latitude`, `longitude`, dan `time` di-drop.
-5. Kategorikal fitur di-encode menggunakan one-hot encoding.
-6. Pembagian data dengan skema 80:20 untuk training dan testing.
-7. Feature scaling menggunakan StandardScaler.
+### Proses Persiapan Data
 
-### Dataset Pembagian
-- **Whole Dataset**: 8136
-- **Train**: 6508
-- **Test**: 1628
+- Fitur yang memiliki jumlah missing value < 100 akan dihapus (drop).
+- Fitur yang memiliki jumlah missing value > 1000 akan diimputasi.
+- Outlier ditangani menggunakan metode IQR.
+- Fitur seperti `id`, `latitude`, `longitude`, dan `time` tidak memberikan nilai tambah, sehingga dilakukan penghapusan (drop).
+- Fitur seperti `category`, `currency`, `fee`, dan `price_type` memiliki nilai yang sama untuk seluruh dataset, sehingga dihapus (drop).
+- Fitur kategorikal diubah menjadi numerik menggunakan teknik one-hot encoding.
+- Pembagian dataset menjadi train dan test dengan rasio 80:20.
+  | Jumlah         |             |
+  |----------------|-------------|
+  | Whole Dataset  | 21473       |
+  | Train          | 17178       |
+  | Test           | 4295        |
+
+- Skalasi fitur dilakukan menggunakan StandardScaler pada data latih dan data uji.
+
+### Alasan Dilakukannya Data Preparation
+- Menangani missing values untuk menghindari masalah yang dapat muncul saat proses pelatihan model.
+- Menghapus outlier untuk meningkatkan akurasi model dengan mengeliminasi data yang dapat mempengaruhi kinerja model.
+- Menghapus fitur yang tidak memberikan kontribusi signifikan untuk menghemat sumber daya komputasi.
+- Melakukan encoding pada variabel kategorikal agar model machine learning dapat memproses data tersebut.
+- Menggunakan metode pembagian 80:20 karena jumlah dataset yang tidak terlalu besar, sehingga pembagian antara data latih dan data uji cukup seimbang.
+- Melakukan feature scaling untuk memastikan model tidak bias terhadap fitur dengan skala yang lebih besar.
 
 ## Modeling
-
 ### Tahap Modeling
-Algoritma yang digunakan:
-- **K-Nearest Neighbors (KNN)**: Parameter `n_neighbors=10`.
-- **Random Forest**: Parameter `n_estimators=50, max_depth=16`.
-- **AdaBoost**: Parameter `learning_rate=0.05`.
 
-### Kelebihan dan Kekurangan
-- **KNN**:
-  - Kelebihan: Sederhana, tidak ada asumsi distribusi data.
-  - Kekurangan: Sensitif terhadap outliers dan noise.
-- **Random Forest**:
-  - Kelebihan: Dapat menangani data yang kompleks, robust terhadap overfitting.
-  - Kekurangan: Interpretasi model lebih sulit, memerlukan lebih banyak sumber daya.
-- **AdaBoost**:
-  - Kelebihan: Dapat meningkatkan akurasi dengan menggabungkan beberapa model.
-  - Kekurangan: Rentan terhadap outliers.
+- **Menyiapkan DataFrame untuk Analisis Masing-Masing Model**
+    ```python
+    models = pd.DataFrame(index=['train_mse', 'test_mse'], columns=['KNN', 'RandomForest', 'Boosting'])
+    ```
+    Pada langkah ini, DataFrame bernama `models` disiapkan untuk menyimpan nilai Mean Squared Error (MSE) pada data latih dan uji untuk setiap model yang akan diuji, yaitu KNN, Random Forest, dan Boosting.
 
-### Model Terbaik
-Berdasarkan evaluasi, **Random Forest** dipilih sebagai model terbaik karena memiliki nilai MSE terendah pada data uji.
+- **Melatih Model KNN**
+    ```python
+    knn = KNeighborsRegressor(n_neighbors=10)
+    knn.fit(X_train, y_train)
+    ```
+    Model K-Nearest Neighbors dilatih menggunakan parameter `n_neighbors=10`. Model ini dilatih dengan data latih `X_train` dan `y_train`, kemudian nilai MSE pada data latih disimpan dalam DataFrame `models`.
+
+- **Melatih Model Random Forest**
+    ```python
+    RF = RandomForestRegressor(n_estimators=50, max_depth=16, random_state=55, n_jobs=-1)
+    RF.fit(X_train, y_train)
+    ```
+    Menggunakan `RandomForestRegressor` dengan parameter `n_estimators=50`, `max_depth=16`, dan `random_state=55`. Model ini dilatih dengan data latih yang sama dan nilai MSE pada data latih disimpan dalam DataFrame `models`.
+
+- **Melatih Model AdaBoost**
+    ```python
+    boosting = AdaBoostRegressor(learning_rate=0.05, random_state=55)
+    boosting.fit(X_train, y_train)
+    ```
+    Menggunakan `AdaBoostRegressor` dengan parameter `learning_rate=0.05` dan `random_state=55`. Model ini juga dilatih dengan data yang sama dan nilai MSE pada data latih disimpan dalam DataFrame `models`.
+
+### Tahapan dan Parameter yang Digunakan
+
+Pada tahap modeling, tiga algoritma yang berbeda digunakan untuk memprediksi harga sewa apartemen:
+
+- **K-Nearest Neighbors (KNN):**
+    - Parameter: `n_neighbors=10`
+    - Deskripsi: Algoritma KNN mencari 10 tetangga terdekat untuk membuat prediksi berdasarkan rata-rata nilai target dari tetangga tersebut.
+
+- **Random Forest:**
+    - Parameter: `n_estimators=50`, `max_depth=16`, `random_state=55`
+    - Deskripsi: Random Forest adalah ensemble yang terdiri dari beberapa pohon keputusan yang dilatih pada subset data yang berbeda untuk meningkatkan akurasi prediksi dan mengurangi overfitting.
+
+- **AdaBoost:**
+    - Parameter: `learning_rate=0.05`, `random_state=55`
+    - Deskripsi: AdaBoost adalah algoritma boosting yang meningkatkan akurasi prediksi dengan menggabungkan beberapa model sederhana (biasanya pohon keputusan dengan kedalaman 1) yang dilatih secara berurutan, dengan memberikan bobot lebih pada kesalahan yang dibuat oleh model sebelumnya.
+
+### Kelebihan dan Kekurangan Setiap Algoritma
+
+- **K-Nearest Neighbors (KNN):**
+    - **Kelebihan:**
+        - Sederhana dan mudah diimplementasikan.
+        - Tidak ada asumsi yang kuat mengenai distribusi data.
+    - **Kekurangan:**
+        - Sensitif terhadap outliers dan noise.
+        - Tidak efisien untuk dataset besar karena kompleksitas komputasi yang tinggi.
+
+- **Random Forest:**
+    - **Kelebihan:**
+        - Dapat menangani data kompleks dengan baik.
+        - Tahan terhadap overfitting karena menggunakan banyak pohon keputusan.
+        - Mampu menangani missing values dan bekerja dengan baik pada dataset besar.
+    - **Kekurangan:**
+        - Interpretasi model lebih sulit dibandingkan dengan model yang lebih sederhana.
+        - Membutuhkan lebih banyak sumber daya komputasi dan memori.
+
+- **AdaBoost:**
+    - **Kelebihan:**
+        - Dapat meningkatkan akurasi dengan menggabungkan beberapa model sederhana.
+        - Fokus pada kesalahan sebelumnya dapat meningkatkan performa model secara iteratif.
+    - **Kekurangan:**
+        - Rentan terhadap outliers karena memberi bobot lebih pada kesalahan.
+        - Kinerja menurun jika data sangat bising (noisy).
+
+### Memilih Model Terbaik Sebagai Solusi
+
+Berdasarkan evaluasi nilai MSE pada data uji, model terbaik dipilih sebagai solusi. Sebagai contoh, jika model Random Forest menunjukkan MSE terendah pada data uji dibandingka
+
 
 ## Evaluation
 
