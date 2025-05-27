@@ -2,38 +2,36 @@
 
 ## Domain Proyek
 ### Latar Belakang
-Dalam dunia real estat dan penyewaan apartemen, menetapkan harga sewa yang akurat sangat penting baik bagi pemilik properti maupun penyewa. Penentuan harga yang tepat tidak hanya membantu pemilik properti untuk memaksimalkan pendapatan, tetapi juga membantu calon penyewa untuk menemukan tempat tinggal yang sesuai dengan anggaran mereka.
+Pasar properti, sebagai sektor yang penting dan dinamis, berperan besar dalam perekonomian, dengan harga menjadi faktor kunci yang mempengaruhi berbagai pemangku kepentingan. Prediksi harga properti sebelumnya didasarkan pada model statistik dan matematis tradisional, seperti regresi dan penilaian harga hedonis, yang menjadi dasar untuk memahami faktor-faktor yang mempengaruhi penilaian properti. Namun, seiring dengan kemajuan daya komputasi dan munculnya teknik machine learning (ML), model-model tradisional ini kini dilengkapi dengan metode yang lebih canggih. Machine learning, terutama teknik seperti neural networks, deep learning, dan gradient boosting, telah terbukti meningkatkan akurasi prediksi, terutama dengan ketersediaan dataset yang lebih besar. Selain itu, penggunaan data time-series yang memperhitungkan fluktuasi harga dari waktu ke waktu menandai kemajuan signifikan dalam prediksi harga properti. Oleh karena itu, pengembangan sistem prediksi harga sewa apartemen menggunakan machine learning menjadi sangat penting untuk membantu pemilik properti dan penyewa membuat keputusan yang lebih baik dan lebih efisien.
 
 ### Mengapa Masalah Ini Harus Diselesaikan?
-- Menentukan harga sewa yang tepat adalah kunci untuk menghindari kerugian baik bagi pemilik properti maupun penyewa.
-- Memiliki sistem prediksi harga yang andal dapat meningkatkan efisiensi pasar penyewaan properti.
+- Penetapan harga sewa yang akurat sangat penting untuk mencegah kerugian bagi kedua belah pihak, baik pemilik properti maupun penyewa.
+- Memiliki sistem prediksi harga yang tepat dapat meningkatkan efektivitas pasar penyewaan properti dengan mempermudah proses penentuan harga yang sesuai.
 
 ### Referensi Terkait
-- [Using machine learning algorithms for predicting real estate values in tourism centers](https://example.com)
-- [Predicting property prices with machine learning algorithms](https://example.com)
+- [MACHINE LEARNING FOR PROPERTY PRICE PREDICTION AND PRICE VALUATION: A SYSTEMATIC LITERATURE REVIEW](https://www.researchgate.net/publication/355373964_MACHINE_LEARNING_FOR_PROPERTY_PRICE_PREDICTION_AND_PRICE_VALUATION_A_SYSTEMATIC_LITERATURE_REVIEW)
+- [Machine Learning for Housing Price Prediction](https://www.researchgate.net/publication/367317216_Machine_Learning_for_Housing_Price_Prediction)
 
 
 ## Business Understanding
 ### Problem Statements
-- Bagaimana cara memprediksi harga sewa apartemen berdasarkan fitur-fitur seperti jumlah kamar mandi, kamar tidur, luas apartemen, dll?
-- Fitur-fitur apa yang paling berpengaruh dalam menentukan harga sewa apartemen?
-- Bagaimana meningkatkan akurasi prediksi harga sewa dengan menggunakan teknik machine learning?
+- Bagaimana cara memprediksi harga sewa apartemen berdasarkan fitur-fitur seperti jumlah kamar mandi, kamar tidur, luas apartemen, dsb?
+- Fitur-fitur apa saja yang paling berpengaruh dalam menentukan harga sewa apartemen?
+- Bagaimana cara meningkatkan akurasi prediksi harga sewa dengan menggunakan teknik machine learning yang canggih seperti K-Nearest Neighbors, Random Forest, atau Boosting?
 
 ### Goals
-- Membangun model machine learning yang dapat memprediksi harga sewa apartemen dengan akurasi tinggi.
-- Mengidentifikasi fitur-fitur yang paling berpengaruh dalam menentukan harga sewa.
-- Meningkatkan akurasi model prediksi melalui hyperparameter tuning dan teknik machine learning yang tepat.
+- Mengembangkan model machine learning yang mampu memprediksi harga sewa apartemen dengan tingkat akurasi yang tinggi, berdasarkan fitur-fitur yang relevan.
+- Menentukan fitur-fitur yang memiliki pengaruh terbesar dalam penentuan harga sewa.
+- Meningkatkan akurasi model prediksi dengan melakukan penyesuaian hyperparameter dan menggunakan teknik machine learning yang sesuai.
 
 ### Solution Statements
-- Menggunakan beberapa algoritma machine learning seperti KNN, Random Forest, dan AdaBoost untuk memprediksi harga sewa.
-- Membandingkan performa model dan memilih model terbaik berdasarkan metrik evaluasi seperti Mean Squared Error (MSE).
+- Menerapkan berbagai algoritma machine learning seperti KNN, Random Forest, dan AdaBoost untuk memprediksi harga sewa.
+- Membandingkan kinerja model dan memilih model terbaik berdasarkan metrik evaluasi seperti Mean Squared Error (MSE).
 
 ## Data Understanding
 
 ### Dataset
-Dataset yang digunakan berasal dari UCI Machine Learning Repository. Dataset ini berisi informasi tentang apartemen yang disewakan, termasuk fitur-fitur seperti jumlah kamar mandi, kamar tidur, luas apartemen, dan harga sewa.
-
-Dataset memiliki jumlah 10.000 baris dan 22 kolom.
+Dataset yang digunakan diperoleh dari Kaggle dan berisi informasi mengenai apartemen yang disewakan, termasuk fitur-fitur seperti jumlah kamar mandi, kamar tidur, luas apartemen, dan harga sewa. Dataset ini memiliki 100.000 baris dan 22 kolom, namun hanya 25.000 baris yang digunakan dalam analisis.
 
 | Column         | Dtype    |
 |----------------|----------|
@@ -64,18 +62,18 @@ Dataset memiliki jumlah 10.000 baris dan 22 kolom.
 ### Missing Values
 | Tipe Data      | Jumlah Missing Value |
 |----------------|----------------------|
-| amenities      | 3549                 |
-| bathrooms      | 34                   |
-| bedrooms       | 7                    |
-| pets_allowed   | 4163                 |
-| address        | 3327                 |
+| amenities      | 4778                 |
+| bathrooms      | 37                   |
+| bedrooms       | 20                   |
+| pets_allowed   | 13239                |
+| address        | 18320                |
 | cityname       | 77                   |
 | state          | 77                   |
 | latitude       | 10                   |
 | longitude      | 10                   |
 
 ### Outliers
-Dataset mempunyai nilai outliers pada fitur-fitur numerical, terutama pada fitur `price` dan `square_feet`.
+Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `price` dan `square_feet`.
 ![boxplot](./images/outputcode.png)
 
 ### Exploratory Data Analysis (EDA)
