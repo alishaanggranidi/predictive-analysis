@@ -1,3 +1,6 @@
+Here is an example of a color in HEX: `#0969DA`. 
+This will display a nice blue color.
+
 # 📊 Laporan Proyek Prediksi Harga Sewa Apartemen
 
 ## Domain Proyek
