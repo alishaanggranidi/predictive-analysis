@@ -147,13 +147,13 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
 
 - Skalasi fitur dilakukan menggunakan StandardScaler pada data latih dan data uji.
 
-### Alasan Dilakukannya Data Preparation
-- Menangani missing values untuk menghindari masalah yang dapat muncul saat proses pelatihan model.
-- Menghapus outlier untuk meningkatkan akurasi model dengan mengeliminasi data yang dapat mempengaruhi kinerja model.
-- Menghapus fitur yang tidak memberikan kontribusi signifikan untuk menghemat sumber daya komputasi.
-- Melakukan encoding pada variabel kategorikal agar model machine learning dapat memproses data tersebut.
-- Menggunakan metode pembagian 80:20 karena jumlah dataset yang tidak terlalu besar, sehingga pembagian antara data latih dan data uji cukup seimbang.
-- Melakukan feature scaling untuk memastikan model tidak bias terhadap fitur dengan skala yang lebih besar.
+### Alasan Mengapa Data Preparation Penting dalam Proses Modeling
+- Menangani nilai yang hilang untuk mencegah masalah yang bisa terjadi saat melatih model.
+- Menghapus data outlier guna meningkatkan akurasi model dengan mengeliminasi nilai yang dapat memengaruhi hasil prediksi.
+- Menghapus fitur yang tidak memberikan kontribusi berarti untuk mengoptimalkan penggunaan sumber daya komputasi.
+- Melakukan pengkodean pada variabel kategorikal agar model machine learning dapat memahami dan memproses data tersebut.
+- Menggunakan pembagian data dengan rasio 80:20 karena ukuran dataset yang tidak terlalu besar, sehingga distribusi antara data latih dan data uji tetap seimbang.
+- Melakukan skala fitur untuk memastikan model tidak terpengaruh oleh fitur dengan rentang nilai yang lebih besar.
 
 ## Modeling
 ### Tahap Modeling
