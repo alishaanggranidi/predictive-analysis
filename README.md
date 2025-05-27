@@ -169,19 +169,19 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
     knn = KNeighborsRegressor(n_neighbors=10)
     knn.fit(X_train, y_train)
     ```
-    Model K-Nearest Neighbors dilatih menggunakan parameter `n_neighbors=10`. Model ini dilatih dengan data latih `X_train` dan `y_train`, kemudian nilai MSE pada data latih disimpan dalam DataFrame `models`.
+    Model K-Nearest Neighbors dilatih menggunakan parameter `n_neighbors=10`. Model ini dilatih dengan data latih `x_train` dan `y_train`, kemudian nilai MSE pada data latih disimpan dalam DataFrame `models`.
 
 - **Melatih Model Random Forest**
     ```python
     RF = RandomForestRegressor(n_estimators=50, max_depth=16, random_state=55, n_jobs=-1)
-    RF.fit(X_train, y_train)
+    RF.fit(x_train, y_train)
     ```
     Menggunakan `RandomForestRegressor` dengan parameter `n_estimators=50`, `max_depth=16`, dan `random_state=55`. Model ini dilatih dengan data latih yang sama dan nilai MSE pada data latih disimpan dalam DataFrame `models`.
 
 - **Melatih Model AdaBoost**
     ```python
     boosting = AdaBoostRegressor(learning_rate=0.05, random_state=55)
-    boosting.fit(X_train, y_train)
+    boosting.fit(x_train, y_train)
     ```
     Menggunakan `AdaBoostRegressor` dengan parameter `learning_rate=0.05` dan `random_state=55`. Model ini juga dilatih dengan data yang sama dan nilai MSE pada data latih disimpan dalam DataFrame `models`.
 
@@ -230,7 +230,7 @@ Pada tahap modeling, tiga algoritma yang berbeda digunakan untuk memprediksi har
 
 ### Memilih Model Terbaik Sebagai Solusi
 
-Berdasarkan evaluasi nilai MSE pada data uji, model terbaik dipilih sebagai solusi. Sebagai contoh, jika model Random Forest menunjukkan MSE terendah pada data uji dibandingka
+Berdasarkan evaluasi nilai MSE pada data uji, model terbaik dipilih sebagai solusi. Sebagai contoh, jika model Random Forest menunjukkan MSE terendah pada data uji dibandingkan dengan KNN dan AdaBoost, maka model Random Forest akan dipilih sebagai model terbaik.
 
 
 ## Evaluation
