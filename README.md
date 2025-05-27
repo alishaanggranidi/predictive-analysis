@@ -104,22 +104,22 @@ Dataset mengandung nilai outlier pada fitur-fitur numerik, terutama pada fitur `
 ### Exploratory Data Analysis (EDA)
 - Membuat heatmap korelasi untuk menganalisis hubungan antar fitur numerik
  ![Korelasi heatmap](./images/outputcode2.png)
- 1. Hubungan antara Luas Bangunan dan Fitur Lain: Fitur square_feet (luas bangunan) menunjukkan hubungan yang cukup kuat dengan bathrooms dan bedrooms, yang menunjukkan bahwa luas bangunan dapat menjadi indikator penting dalam menentukan ukuran dan fasilitas apartemen.
- 2. Harga Sewa: Korelasi antara harga sewa (price) dan fitur lainnya (kamar mandi dan kamar tidur) relatif rendah. Ini menunjukkan bahwa harga sewa mungkin dipengaruhi oleh faktor-faktor lain seperti lokasi, fasilitas tambahan, atau kondisi pasar yang tidak tercakup dalam fitur yang dianalisis.
+    1. Hubungan antara Luas Bangunan dan Fitur Lain: Fitur square_feet (luas bangunan) menunjukkan hubungan yang cukup kuat dengan bathrooms dan bedrooms, yang menunjukkan bahwa luas bangunan dapat menjadi indikator penting dalam menentukan ukuran dan fasilitas apartemen.
+    2. Harga Sewa: Korelasi antara harga sewa (price) dan fitur lainnya (kamar mandi dan kamar tidur) relatif rendah. Ini menunjukkan bahwa harga sewa mungkin dipengaruhi oleh faktor-faktor lain seperti lokasi, fasilitas tambahan, atau kondisi pasar yang tidak tercakup dalam fitur yang dianalisis.
 
 - Membuat histogram untuk menganalisis distribusi data numerik
  ![Histogram](./images/outputcode3.png)
- 1. Kamar Mandi (Bathrooms):
- * Mayoritas properti memiliki 1 kamar mandi, dengan beberapa properti memiliki 1.5 dan 2.5 kamar mandi.
- * Kamar mandi seharusnya tidak dalam format float, sehingga entri dengan nilai kamar mandi pecahan akan dihapus (drop).
- 2. Kamar Tidur (Bedrooms):
- * Mayoritas properti memiliki 1 atau 2 kamar tidur.
- 3. Harga Sewa (Price):
- * Harga sewa apartemen tersebar dengan puncak di sekitar 700-1000 USD.
- * Distribusi harga menunjukkan pola normal dengan sedikit skew ke kanan.
- 4. Luas (Square Feet):
- * Luas apartemen bervariasi dengan puncak sekitar 500-800 kaki persegi.
- * Distribusi luas juga menunjukkan pola normal dengan skew ke kanan.
+    1. Kamar Mandi (Bathrooms):
+    * Mayoritas properti memiliki 1 kamar mandi, dengan beberapa properti memiliki 1.5 dan 2.5 kamar mandi.
+    * Kamar mandi seharusnya tidak dalam format float, sehingga entri dengan nilai kamar mandi pecahan akan dihapus (drop).
+    2. Kamar Tidur (Bedrooms):
+    * Mayoritas properti memiliki 1 atau 2 kamar tidur.
+    3. Harga Sewa (Price):
+    * Harga sewa apartemen tersebar dengan puncak di sekitar 700-1000 USD.
+    * Distribusi harga menunjukkan pola normal dengan sedikit skew ke kanan.
+    4. Luas (Square Feet):
+    * Luas apartemen bervariasi dengan puncak sekitar 500-800 kaki persegi.
+    * Distribusi luas juga menunjukkan pola normal dengan skew ke kanan.
 
 #### Korelasi Heatmap
 - **Luas Bangunan (square_feet)** memiliki hubungan kuat dengan **bathrooms** dan **bedrooms**.
